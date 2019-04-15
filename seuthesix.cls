@@ -46,7 +46,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexrep}}
 \ProcessOptions
 \LoadClass[twoside,a4paper,zihao=-4,UTF8,openright]{ctexrep}
-\RequirePackage[titles]{tocloft}
+\RequirePackage[titles,subfigure]{tocloft}
 \renewcommand{\cftchapleader}{\bfseries\cftdotfill{\cftdotsep}}
 \newcommand{\chuhao}{\fontsize{42bp}{46bp}\selectfont}
 \newcommand{\xiaochuhao}{\fontsize{36bp}{40bp}\selectfont}
