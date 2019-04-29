@@ -127,9 +127,8 @@ listtablename={表格目录}
 \newcommand{\backcover}{
 \clearpage\thispagestyle{empty}\cleardoublepage\mbox{ }
 \clearpage\thispagestyle{empty} %backcover always at even page.
-\begin{picture}(0,0)
- \put(-1,-22){ %
-\includegraphics[width=\textwidth]{figures/back-cover.png}}
+\begin{picture}(0,0)(20,650)
+    {\includegraphics[width=\textwidth,bb=0 0 2424 3508]{figures/back-cover.png}}
 \end{picture}
 }
 
