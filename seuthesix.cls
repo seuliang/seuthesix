@@ -581,7 +581,7 @@ listtablename={表格目录}
        {\vfill}
        {\@departmenteng}\\
        {\universitynameeng}\\
-       {\MONTH \quad \number\year}
+       {\MONTH~\number\year}
        \par
      }%
    \end{center}%
