@@ -22,6 +22,22 @@
 \ProvidesClass{seuthesix}[2016/03/20 1.0.1 The LaTeX template for academic  degree thesis of Southeast University]
 \typeout{Document Class `seuthesix' 1.0.1 by James Fan (2016/03/20)}
 
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or January% 1
+  \or February% 2
+  \or March% 3
+  \or April% 4
+  \or May% 5
+  \or June% 6
+  \or July% 7
+  \or August% 8
+  \or September% 9
+  \or October% 10
+  \or November% 11
+  \or December% 12
+  \fi}
+  
 \newif\ifnocolorlinks\nocolorlinksfalse
 \newif\ifcoadvisor\coadvisorfalse
 \newif\ifengineering\engineeringfalse
@@ -62,7 +78,7 @@
 \newcommand{\liuhao}{\fontsize{7.5bp}{9bp}\selectfont}
 \newcommand{\xiaoliuhao}{\fontsize{6.5bp}{7.5bp}\selectfont}
 \newcommand{\qihao}{\fontsize{5.5bp}{6.5bp}\selectfont}
-\setCJKmainfont{SimSun}
+\setCJKmainfont[FallBack=simsunb.ttf, BoldFont = simhei.ttf, ItalicFont = simkai.ttf]{simsun.ttc}
 \ctexset{%
 chapter/format=\centering,
 chapter/nameformat=\large\heiti,
@@ -73,8 +89,8 @@ section/format=\raggedright,
 section/nameformat={\large\bfseries},
 section/numberformat={\large\bfseries},
 section/titleformat={\sihao\bfseries},
-subsection/format=\sihao\mdseries\raggedright,
-subsubsection/format=\sihao\mdseries\raggedright,
+subsection/format={\xiaosihao\heiti\raggedright},
+subsubsection/format={\xiaosihao\heiti\raggedright},
 listfigurename={插图目录},
 listtablename={表格目录}
 }
@@ -127,9 +143,12 @@ listtablename={表格目录}
 \newcommand{\backcover}{
 \clearpage\thispagestyle{empty}\cleardoublepage\mbox{ }
 \clearpage\thispagestyle{empty} %backcover always at even page.
-\begin{picture}(0,0)(20,650)
+%\begin{picture}(0,0)
+% \put(-1,-22){ \includegraphics[width=\textwidth]{figures/back-cover.png}}
+%\end{picture}
+  \begin{picture}(0,0)(20,650)
     {\includegraphics[width=\textwidth,bb=0 0 2424 3508]{figures/back-cover.png}}
-\end{picture}
+  \end{picture}
 }
 
 \RequirePackage[top=1.2in,bottom=1in,left=2.5cm,right=2.5cm,a4paper]{geometry}
@@ -562,7 +581,7 @@ listtablename={表格目录}
        {\vfill}
        {\@departmenteng}\\
        {\universitynameeng}\\
-       {\todayeng}
+       {\MONTH \quad \number\year}
        \par
      }%
    \end{center}%
@@ -616,36 +635,36 @@ chapter/titleformat=\large\heiti
  \end{description}
 }
 
-\newcommand\listofothers{%
-\iffigurelist
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
-\fi
+\newcommand{\listofothers}
+{
+	\iffigurelist
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\listoffigures
+	\fi
 
-\iftablelist
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
-\fi
+	\iftablelist
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\listoftables
+	\fi
 
-\ifalgorithmlist
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\listalgorithmname}
-\listofalgorithms
-\fi
+	\ifalgorithmlist
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\listalgorithmname}
+	\listofalgorithms
+	\fi
 
-\ifnomlist
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{\nomname}
-\pagestyle{nom}
-\printnomenclature[1in]
-\fi
-
+	\ifnomlist
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\nomname}
+	\pagestyle{nom}
+	\printnomenclature[1in]
+	\fi
 }
 
 \newcommand{\mainmatter}{%
@@ -665,7 +684,7 @@ chapter/titleformat=\large\heiti
 \bibliographystyle{seuthesix}
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{chapter}{\bibname}
+\addcontentsline{toc}{chapter}{#1}
 \bibliography{#1}
 }
 
