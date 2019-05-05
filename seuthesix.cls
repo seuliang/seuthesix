@@ -500,7 +500,7 @@ listtablename={表格目录}
 
    \vfill
    \setcounter{page}{1}
-{\songti\sihao\centerline{\today} \par}
+{\songti\sihao\centerline{\the\year 年\quad 月\quad 日} \par}
 
  \clearpage\thispagestyle{empty}\cleardoublepage%
  \thispagestyle{empty}
