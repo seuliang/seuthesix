@@ -525,7 +525,7 @@ listtablename={表格目录}
    \begin{tabular}{cc}
      \makebox[3.5cm][s]{\xiaoerhao\heiti{}专~~业~~名~~称: } &
      \underline{\makebox[6cm][s]{
-         \xiaoerhao\songti\textbf{\@major} }} \\
+         \xiaoerhao\songti\textbf{\@submajor} }} \\
          \\
        \makebox[3.5cm][s]{ \xiaoerhao\heiti\authorpre:  } &
        \underline{\makebox[6cm][s]{
