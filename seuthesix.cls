@@ -450,7 +450,7 @@ listtablename={表格目录}
 \AddToShipoutPictureBG*{\setlength{\unitlength}{1cm}\put(17,27){%
 \parbox{\paperwidth}{\includegraphics[width=2cm]{figures/seu-color-logo.png}}}}%
 
-   \vspace*{8cm}
+   \vspace*{8.4cm}
 
    \begin{center}
      \linespread{1.25}
