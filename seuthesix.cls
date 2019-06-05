@@ -433,11 +433,13 @@ listtablename={表格目录}
 \AddToShipoutPictureBG*{\setlength{\unitlength}{1cm}\put(0,18){ %
 \parbox{\paperwidth}{\centering\includegraphics[scale=0.65]{figures/engineering.png}}}}%
    \else \ifmasters
-\AddToShipoutPictureBG*{\setlength{\unitlength}{1cm}\put(0,18){ %
-\parbox{\paperwidth}{\centering\includegraphics[scale=1.1]{figures/master-hwzs.pdf}}}}%
+    \begin{picture}(0,0)(-86,255)
+      {\includegraphics[height=40pt,bb=0 0 1149 150]{figures/master.png}}
+    \end{picture}
    \else \ifphd
-   \AddToShipoutPictureBG*{\setlength{\unitlength}{1cm}\put(0,18){ %
-\parbox{\paperwidth}{\centering\includegraphics[scale=1.1]{figures/doctor-hwzs.pdf}}}}%
+    \begin{picture}(0,0)(-86,255)
+      {\includegraphics[height=40pt,bb=0 0 1149 150]{figures/doctor.png}}
+    \end{picture}
    \else
    \ClassError{seuthesix}{invalid degree type option.}%
    {Check your class option of degree type to be one of the following:%
@@ -596,20 +598,20 @@ listtablename={表格目录}
 
 \renewenvironment{abstract}[1]
 {
-\pagenumbering{Roman}
-\clearpage\thispagestyle{empty}\cleardoublepage\thispagestyle{plain}
- \newcommand{\@keywords}{#1}
- \hypersetup{pdfkeywords={\@keywords}}
- \phantomsection
- \addcontentsline{toc}{chapter}{\@abstracttitle}
-   \chapter*{\@abstracttitle}
-   \setcounter{page}{1}
+	\pagenumbering{Roman}
+	\clearpage\thispagestyle{empty}\cleardoublepage\thispagestyle{plain}
+	\newcommand{\@keywords}{#1}
+	\hypersetup{pdfkeywords={\@keywords}}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\@abstracttitle}
+	\chapter*{\@abstracttitle}
+	\setcounter{page}{1}
 }
 {
- \par
- \begin{description}
- \item[关键词：] \@keywords
- \end{description}
+	\par
+	\begin{description}
+	\item[关键词：] \@keywords
+	\end{description}
 }
 
 \newenvironment{englishabstract}[1]
